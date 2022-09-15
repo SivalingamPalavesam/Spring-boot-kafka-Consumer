@@ -1,0 +1,23 @@
+zookeeper and kafka server
+***************************
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+kafka server
+************
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+Create a Kafka Topic  &&  create new Kafka topic
+********************     **********************
+windows\kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic SampleTopic 
+
+Consume the messages and submit to test topic  
+*********************************************     
+windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic SampleTopic --from-beginning
+
+Shutdown Kafka
+**************
+bin\windows\kafka-server-stop.bat
+
+Shutdown Zookeeper
+******************
+bin\windows\zookeeper-server-stop.bat
